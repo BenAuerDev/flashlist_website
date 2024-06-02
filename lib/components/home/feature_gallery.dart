@@ -6,21 +6,8 @@ class Home extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield section([
-      div(classes: 'content-wrapper', [
-        h1([text('Flashlist')]),
-        h2([
-          text('Because collaboration should be easy'),
-        ]),
-        p([
-          text(
-            'Flashlist is a cutting-edge list management tool designed to streamline your productivity. With its intuitive interface and powerful features, Flashlist makes it easy to organize, track, and complete tasks, helping you stay on top of your work and achieve your goals.',
-          ),
-        ]),
-        div(classes: 'feature-item', [
-          h3([text('test')])
-        ]),
-      ]),
+    div(classes: 'feature-item', [
+      h3([text('test')])
     ]);
   }
 

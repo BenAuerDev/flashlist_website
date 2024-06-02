@@ -10,7 +10,7 @@ void main() {
   );
 
   runApp(Document(
-    title: 'flashlist_website',
+    title: 'Flashlist - Simplify your Task World!',
     styles: styles,
     body: App(),
   ));

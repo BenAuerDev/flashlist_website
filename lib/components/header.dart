@@ -1,59 +1,58 @@
+import 'package:flashlist_website/components/hero_banner.dart';
+import 'package:flashlist_website/components/navigation.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:jaspr_router/jaspr_router.dart';
-
-import '../styles.dart';
 
 class Header extends StatelessComponent {
   const Header({super.key});
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    var activePath = context.binding.currentUri.path;
-
     yield header([
-      nav([
-        for (var route in [
-          (label: 'Home', path: '/'),
-          (label: 'About', path: '/about'),
-        ])
-          div(classes: activePath == route.path ? 'active' : null, [
-            Link(to: route.path, [text(route.label)])
-          ]),
+      div(classes: 'header-wrapper', [
+        img(classes: 'main-logo', src: 'images/logo_horizontal_color.svg'),
+        Navigation(),
       ]),
+      HeroBanner(),
     ]);
   }
 
   static get styles => [
         css('header', [
-          css('&').flexbox(justifyContent: JustifyContent.center).box(padding: EdgeInsets.all(1.em)),
-          css('nav', [
-            css('&')
-                .background(color: primaryColor)
-                .box(height: 3.em, radius: BorderRadius.all(Radius.circular(10.px)), overflow: Overflow.clip)
-                .flexbox(justifyContent: JustifyContent.spaceBetween),
-            css('a', [
-              css('&')
-                  .text(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                    decoration: const TextDecoration(line: TextDecorationLine.none),
-                  )
-                  .box(height: 100.percent, padding: EdgeInsets.symmetric(horizontal: 2.em))
-                  .flexbox(alignItems: AlignItems.center),
-              css('&:hover').background(color: const Color.hex('#0005')),
-            ]),
-            css('div.active', [
-              css('&').box(position: const Position.relative()),
-              css('&::before')
-                  .raw({'content': '""'})
-                  .box(
-                    display: Display.block,
-                    position: Position.absolute(bottom: 0.5.em, left: 20.px, right: 20.px),
-                    radius: BorderRadius.circular(1.px),
-                    height: 2.px,
-                  )
-                  .background(color: Colors.white)
-            ])
+          css('&').flexbox(
+            alignItems: AlignItems.center,
+            direction: FlexDirection.column,
+          ),
+          css('.header-wrapper')
+              .box(
+                width: 100.percent,
+              )
+              .flexbox(
+                justifyContent: JustifyContent.spaceBetween,
+                alignItems: AlignItems.center,
+                direction: FlexDirection.row,
+              ),
+          css('.main-logo').box(
+            width: 150.px,
+            position: Position.relative(right: 20.px, bottom: 0.px),
+          ),
+        ]),
+        StyleRule.media(query: MediaRuleQuery(minWidth: 768.px), styles: [
+          css('header', [
+            css('&'),
+            css('.main-logo').box(
+              width: 250.px,
+            ),
+          ]),
+        ]),
+        StyleRule.media(query: MediaRuleQuery(minWidth: 1024.px), styles: [
+          css('header', [
+            css('.header-wrapper').box(
+              maxWidth: 1024.px,
+              margin: EdgeInsets.symmetric(horizontal: 20.px),
+            ),
+            css('.main-logo').box(
+              width: 250.px,
+            ),
           ]),
         ]),
       ];
