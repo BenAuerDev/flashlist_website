@@ -1,4 +1,5 @@
-import 'package:flashlist_website/components/hero_banner.dart';
+import 'package:flashlist_website/components/home/hero_banner.dart';
+import 'package:flashlist_website/components/home/cta_bar.dart';
 import 'package:flashlist_website/components/navigation.dart';
 import 'package:jaspr/jaspr.dart';
 
@@ -12,7 +13,6 @@ class Header extends StatelessComponent {
         img(classes: 'main-logo', src: 'images/logo_horizontal_color.svg'),
         Navigation(),
       ]),
-      HeroBanner(),
     ]);
   }
 
@@ -25,6 +25,7 @@ class Header extends StatelessComponent {
           css('.header-wrapper')
               .box(
                 width: 100.percent,
+                height: 50.px,
               )
               .flexbox(
                 justifyContent: JustifyContent.spaceBetween,
@@ -39,6 +40,9 @@ class Header extends StatelessComponent {
         StyleRule.media(query: MediaRuleQuery(minWidth: 768.px), styles: [
           css('header', [
             css('&'),
+            css('.header-wrapper').box(
+              height: 75.px,
+            ),
             css('.main-logo').box(
               width: 250.px,
             ),
