@@ -1,5 +1,7 @@
 import 'package:flashlist_website/components/footer.dart';
-import 'package:flashlist_website/components/hero_banner.dart';
+import 'package:flashlist_website/components/home/hero_banner.dart';
+import 'package:flashlist_website/components/home/cta_bar.dart';
+import 'package:flashlist_website/components/home/feature_gallery.dart';
 import 'package:flashlist_website/components/navigation.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
@@ -25,11 +27,6 @@ class App extends StatelessComponent {
           title: 'About',
           builder: (context, state) => const About(),
         ),
-        Route(
-          path: '/about',
-          title: 'About',
-          builder: (context, state) => const About(),
-        ),
       ]),
       Footer(),
     ]);
@@ -47,6 +44,8 @@ class App extends StatelessComponent {
         ...Header.styles,
         ...Navigation.styles,
         ...HeroBanner.styles,
+        ...CallToActionBar.styles,
+        ...FeatureGallery.styles,
         ...Home.styles,
         ...About.styles,
         ...Footer.styles,

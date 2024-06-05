@@ -35,27 +35,33 @@ class Navigation extends StatelessComponent {
             alignItems: AlignItems.center,
             direction: FlexDirection.row,
           ),
-          css('.burger-menu-icon', [
-            css('&')
-                .box(
-                  width: 24.px,
-                  padding: EdgeInsets.only(right: 12.px),
-                )
-                .text(
-                  color: Colors.white,
-                ),
-          ]),
-          css('nav').box(display: Display.none),
         ]),
+        css('.burger-menu-icon', [
+          css('&')
+              .box(
+                width: 24.px,
+                padding: EdgeInsets.only(right: 12.px),
+              )
+              .text(
+                color: Colors.white,
+              ),
+        ]),
+        // .box(display: Display.none),
+        css('nav')
+            .flexbox(
+              justifyContent: JustifyContent.spaceBetween,
+              alignItems: AlignItems.center,
+              direction: FlexDirection.row,
+            )
+            .box(
+              margin: EdgeInsets.only(right: 2.em),
+              display: Display.none,
+            ),
         // Tablet
         StyleRule.media(query: MediaRuleQuery(minWidth: 768.px), styles: [
           css('.burger-menu-icon').box(display: Display.none),
           css('nav', [
-            css('&')
-                .box(
-                  display: Display.flex,
-                )
-                .flexbox(
+            css('&').box(display: Display.flex).flexbox(
                   justifyContent: JustifyContent.spaceBetween,
                   alignItems: AlignItems.center,
                   direction: FlexDirection.row,
@@ -70,7 +76,7 @@ class Navigation extends StatelessComponent {
                   )
                   .box(
                       height: 100.percent,
-                      padding: EdgeInsets.symmetric(horizontal: 2.em))
+                      padding: EdgeInsets.symmetric(horizontal: 16.px))
                   .flexbox(alignItems: AlignItems.center),
               css('&:hover').background(color: const Color.hex('#0005')),
             ]),
@@ -81,7 +87,7 @@ class Navigation extends StatelessComponent {
                   .box(
                     display: Display.block,
                     position: Position.absolute(
-                      bottom: 0.em,
+                      top: 20.px,
                       left: 20.px,
                       right: 20.px,
                     ),

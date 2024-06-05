@@ -1,3 +1,6 @@
+import 'package:flashlist_website/components/home/hero_banner.dart';
+import 'package:flashlist_website/components/home/cta_bar.dart';
+import 'package:flashlist_website/components/home/feature_gallery.dart';
 import 'package:jaspr/jaspr.dart';
 
 @client
@@ -7,36 +10,24 @@ class Home extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield section([
+      HeroBanner(),
+      CallToActionBar(),
       div(classes: 'content-wrapper', [
-        h1([text('Flashlist')]),
+        h1([text('FlashList')]),
         h2([
-          text('Because collaboration should be easy'),
+          text('Because communicating your ideas should be easy.'),
         ]),
         p([
           text(
-            'Flashlist is a cutting-edge list management tool designed to streamline your productivity. With its intuitive interface and powerful features, Flashlist makes it easy to organize, track, and complete tasks, helping you stay on top of your work and achieve your goals.',
+            'Flashlist is a cutting-edge list management tool. Designed to be simple and intuitive, it allows you to create a list and fill it with your ideas quickly. Also Collaboration is easy like never before thanks to the ability to share lists and work together in real-time.',
           ),
         ]),
-        div(classes: 'feature-item', [
-          h3([text('test')])
-        ]),
+        FeatureGallery(),
       ]),
     ]);
   }
 
   static get styles => [
-        css('.feature-item')
-            .background(
-              color: Color.hex('#616161'),
-            )
-            .flexbox(
-              direction: FlexDirection.column,
-              justifyContent: JustifyContent.center,
-              alignItems: AlignItems.center,
-            )
-            .box(
-              width: 100.percent,
-              height: 100.px,
-            ),
+        css('p').text(align: TextAlign.center),
       ];
 }
