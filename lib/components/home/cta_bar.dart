@@ -1,3 +1,4 @@
+import 'package:flashlist_website/styles.dart';
 import 'package:jaspr/jaspr.dart';
 
 @client
@@ -32,7 +33,7 @@ class CallToActionBar extends StatelessComponent {
 
   static get styles => [
         css('.cta-background')
-            .background(color: Color.hex('#616161'))
+            .background(color: accentColor)
             .box(width: 100.percent)
             .flexbox(justifyContent: JustifyContent.center),
         css('.cta-bar', [

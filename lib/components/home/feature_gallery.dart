@@ -1,3 +1,4 @@
+import 'package:flashlist_website/styles.dart';
 import 'package:jaspr/jaspr.dart';
 
 @client
@@ -42,8 +43,9 @@ class FeatureGallery extends StatelessComponent {
               .raw({'gap': '1%'}),
           css('.feature-item')
               .background(
-                color: Color.hex('#616161'),
+                color: accentColor,
               )
+              .text(color: Colors.white)
               .flexbox(
                 direction: FlexDirection.column,
                 justifyContent: JustifyContent.center,

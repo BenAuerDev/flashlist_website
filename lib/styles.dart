@@ -4,7 +4,11 @@ import 'app.dart';
 
 const primaryColor = Color.hex('#2bb673');
 
-const backgroundColor = Color.hex('#414042');
+const backgroundColor = Color.hex('#f2f2f2');
+
+const accentColor = Color.hex('#78909C');
+
+const textColor = Color.hex('#333333');
 
 // The main styles for this app.
 List<StyleRule> get styles => [
@@ -18,7 +22,7 @@ List<StyleRule> get styles => [
               FontFamily('Roboto'),
               FontFamilies.sansSerif,
             ]),
-            color: Colors.white,
+            color: textColor,
           )
           .box(width: 100.percent, minHeight: 100.vh)
           .box(margin: EdgeInsets.zero, padding: EdgeInsets.zero)

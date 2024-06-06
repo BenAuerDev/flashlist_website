@@ -1,3 +1,4 @@
+import 'package:flashlist_website/styles.dart';
 import 'package:jaspr/jaspr.dart';
 
 class Footer extends StatelessComponent {
@@ -9,7 +10,7 @@ class Footer extends StatelessComponent {
       div(classes: 'footer-wrapper', [
         div(classes: 'footer-links', [
           a(href: '/sitemap', [text('Sitemap')]),
-          a(href: '/impressum', [text('Impressum')]),
+          a(href: '/imprint', [text('Imprint')]),
           a(href: '/terms', [text('Terms of Service')]),
         ]),
         p([
@@ -23,9 +24,21 @@ class Footer extends StatelessComponent {
 
   static get styles => [
         css('footer')
-            .background(color: Color.hex('#616161'))
+            // .background(color: accentColor)
             .flexbox(justifyContent: JustifyContent.center)
-            .box(width: 100.percent),
+            .box(
+              width: 100.percent,
+              border: Border.only(
+                top: BorderSide(
+                  width: 1.px,
+                  color: accentColor,
+                  style: BorderStyle.solid,
+                ),
+              ),
+            )
+            .text(
+              color: textColor,
+            ),
         css('.footer-wrapper', [
           css('&')
               .flexbox(
@@ -42,7 +55,7 @@ class Footer extends StatelessComponent {
               direction: FlexDirection.column,
               justifyContent: JustifyContent.center),
           css('a').text(
-            color: Colors.white,
+            color: textColor,
             decoration: TextDecoration(line: TextDecorationLine.none),
             align: TextAlign.center,
           ),
