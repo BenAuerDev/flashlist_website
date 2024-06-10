@@ -9,9 +9,9 @@ class Footer extends StatelessComponent {
     yield footer([
       div(classes: 'footer-wrapper', [
         div(classes: 'footer-links', [
-          a(href: '/sitemap', [text('Sitemap')]),
           a(href: '/imprint', [text('Imprint')]),
           a(href: '/terms', [text('Terms of Service')]),
+          a(href: '/privacy-policy', [text('Privacy Policy')]),
         ]),
         p([
           text(
