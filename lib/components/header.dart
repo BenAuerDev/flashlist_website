@@ -1,6 +1,5 @@
-import 'package:flashlist_website/components/home/hero_banner.dart';
-import 'package:flashlist_website/components/home/cta_bar.dart';
 import 'package:flashlist_website/components/navigation.dart';
+import 'package:flashlist_website/styles.dart';
 import 'package:jaspr/jaspr.dart';
 
 class Header extends StatelessComponent {
@@ -10,7 +9,9 @@ class Header extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     yield header([
       div(classes: 'header-wrapper', [
-        img(classes: 'main-logo', src: 'images/logo_horizontal_color.svg'),
+        a(href: '/', [
+          img(classes: 'main-logo', src: 'images/logo_horizontal_color.svg'),
+        ]),
         Navigation(),
       ]),
     ]);
@@ -18,10 +19,20 @@ class Header extends StatelessComponent {
 
   static get styles => [
         css('header', [
-          css('&').flexbox(
-            alignItems: AlignItems.center,
-            direction: FlexDirection.column,
-          ),
+          css('&')
+              .flexbox(
+                alignItems: AlignItems.center,
+                direction: FlexDirection.column,
+              )
+              .box(
+                border: Border.only(
+                  bottom: BorderSide(
+                    width: 1.px,
+                    color: accentColor,
+                    style: BorderStyle.solid,
+                  ),
+                ),
+              ),
           css('.header-wrapper')
               .box(
                 width: 100.percent,
