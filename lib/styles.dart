@@ -16,6 +16,10 @@ List<StyleRule> get styles => [
       const StyleRule.import('https://fonts.googleapis.com/css?family=Roboto'),
       const StyleRule.import(
           'https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap'),
+      css('.main').flexbox(
+        direction: FlexDirection.column,
+        justifyContent: JustifyContent.spaceBetween,
+      ),
       css('html, body')
           .text(
             fontFamily: const FontFamily.list([
@@ -54,7 +58,7 @@ List<StyleRule> get styles => [
         css('.content-wrapper').box(
           padding: EdgeInsets.symmetric(
             horizontal: 32.px,
-            vertical: 64.px,
+            vertical: 32.px,
           ),
         ),
         css('h1').text(fontSize: 32.px),
