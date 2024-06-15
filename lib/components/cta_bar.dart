@@ -20,7 +20,8 @@ class CallToActionBar extends StatelessComponent {
         ),
         a(
           classes: 'cta-button',
-          href: 'https://play.google.com/store/flashlist',
+          href:
+              'https://play.google.com/store/apps/details?id=com.flashlistapp',
           target: Target.blank,
           [
             img(classes: 'cta-button-icon', src: 'images/playstore.svg'),
