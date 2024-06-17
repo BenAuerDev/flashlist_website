@@ -20,6 +20,14 @@ class HowToDelete extends StatelessComponent {
             '3. Click on this item, read the warning, and confirm your choice.',
           )
         ]),
+        p([
+          text(
+            'Please note! Deleting your account will also remove all Flashlists and items you created. ',
+          )
+        ]),
+        p([
+          text('Thank you for trying out Flashlist! We appreciate your time!')
+        ]),
       ]),
     ]);
   }

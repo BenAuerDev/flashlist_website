@@ -18,16 +18,16 @@ class CallToActionBar extends StatelessComponent {
             text('View on GitHub')
           ],
         ),
-        a(
-          classes: 'cta-button',
-          href:
-              'https://play.google.com/store/apps/details?id=com.flashlistapp',
-          target: Target.blank,
-          [
-            img(classes: 'cta-button-icon', src: 'images/playstore.svg'),
-            text('Become a Beta Tester')
-          ],
-        ),
+        // a(
+        //   classes: 'cta-button',
+        //   href:
+        //       'https://play.google.com/store/apps/details?id=com.flashlistapp',
+        //   target: Target.blank,
+        //   [
+        //     img(classes: 'cta-button-icon', src: 'images/playstore.svg'),
+        //     text('Become a Beta Tester')
+        //   ],
+        // ),
       ])
     ]);
   }
