@@ -2,9 +2,10 @@
 FROM dart:3.2.5 AS build
 
 WORKDIR /app
-COPY . .
+COPY pubspec.yaml .
 
 RUN dart pub get
+COPY . .
 RUN jaspr build
 
 # Final image stage
