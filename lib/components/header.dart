@@ -1,5 +1,5 @@
 import 'package:flashlist_website/components/navigation.dart';
-import 'package:flashlist_website/styles.dart';
+import 'package:flashlist_website/constants/theme.dart';
 import 'package:jaspr/jaspr.dart';
 
 class Header extends StatelessComponent {
@@ -48,7 +48,7 @@ class Header extends StatelessComponent {
             position: Position.relative(right: 20.px, bottom: 0.px),
           ),
         ]),
-        StyleRule.media(query: MediaRuleQuery(minWidth: 768.px), styles: [
+        StyleRule.media(query: MediaQuery.screen(minWidth: 768.px), styles: [
           css('header', [
             css('&'),
             css('.header-wrapper').box(
@@ -59,7 +59,7 @@ class Header extends StatelessComponent {
             ),
           ]),
         ]),
-        StyleRule.media(query: MediaRuleQuery(minWidth: 1024.px), styles: [
+        StyleRule.media(query: MediaQuery.screen(minWidth: 1024.px), styles: [
           css('header', [
             css('.header-wrapper').box(
               maxWidth: 1024.px,

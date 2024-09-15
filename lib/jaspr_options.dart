@@ -2,15 +2,16 @@
 // Generated with jaspr_builder
 
 import 'package:jaspr/jaspr.dart';
-
-import 'pages/home.dart' as c0;
-import 'pages/terms.dart' as c1;
-import 'pages/privacy_policy.dart' as c2;
-import 'pages/imprint.dart' as c3;
-import 'pages/about.dart' as c4;
-import 'pages/how_to_delete.dart' as c5;
-import 'components/home/feature_gallery.dart' as c6;
-import 'components/cta_bar.dart' as c7;
+import 'package:flashlist_website/components/home/feature_gallery.dart' as prefix0;
+import 'package:flashlist_website/components/cta_bar.dart' as prefix1;
+import 'package:flashlist_website/components/navigation.dart' as prefix2;
+import 'package:flashlist_website/constants/theme.dart' as prefix3;
+import 'package:flashlist_website/pages/about.dart' as prefix4;
+import 'package:flashlist_website/pages/home.dart' as prefix5;
+import 'package:flashlist_website/pages/how_to_delete.dart' as prefix6;
+import 'package:flashlist_website/pages/imprint.dart' as prefix7;
+import 'package:flashlist_website/pages/privacy_policy.dart' as prefix8;
+import 'package:flashlist_website/pages/terms.dart' as prefix9;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -28,15 +29,19 @@ import 'components/cta_bar.dart' as c7;
 ///   runApp(...);
 /// }
 /// ```
-const defaultJasprOptions = JasprOptions(
-  targets: {
-    c0.Home: ClientTarget<c0.Home>('pages/home'),
-    c1.TermsOfService: ClientTarget<c1.TermsOfService>('pages/terms'),
-    c2.PrivacyPolicy: ClientTarget<c2.PrivacyPolicy>('pages/privacy_policy'),
-    c3.Imprint: ClientTarget<c3.Imprint>('pages/imprint'),
-    c4.About: ClientTarget<c4.About>('pages/about'),
-    c5.HowToDelete: ClientTarget<c5.HowToDelete>('pages/how_to_delete'),
-    c6.FeatureGallery: ClientTarget<c6.FeatureGallery>('components/home/feature_gallery'),
-    c7.CallToActionBar: ClientTarget<c7.CallToActionBar>('components/cta_bar'),
+final defaultJasprOptions = JasprOptions(
+  clients: {
+    prefix1.CallToActionBar: ClientTarget<prefix1.CallToActionBar>('components/cta_bar'),
+    prefix0.FeatureGallery: ClientTarget<prefix0.FeatureGallery>('components/home/feature_gallery'),
+    prefix4.About: ClientTarget<prefix4.About>('pages/about'),
+    prefix5.Home: ClientTarget<prefix5.Home>('pages/home'),
+    prefix6.HowToDelete: ClientTarget<prefix6.HowToDelete>('pages/how_to_delete'),
+    prefix7.Imprint: ClientTarget<prefix7.Imprint>('pages/imprint'),
+    prefix8.PrivacyPolicy: ClientTarget<prefix8.PrivacyPolicy>('pages/privacy_policy'),
+    prefix9.TermsOfService: ClientTarget<prefix9.TermsOfService>('pages/terms'),
   },
+  styles: () => [
+    ...prefix2.Navigation.styles,
+    ...prefix3.styles,
+  ],
 );

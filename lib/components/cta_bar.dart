@@ -1,4 +1,4 @@
-import 'package:flashlist_website/styles.dart';
+import 'package:flashlist_website/constants/theme.dart';
 import 'package:jaspr/jaspr.dart';
 
 @client
@@ -81,12 +81,12 @@ class CallToActionBar extends StatelessComponent {
           height: 20.px,
           margin: EdgeInsets.only(right: 15.px),
         ),
-        StyleRule.media(query: MediaRuleQuery(minWidth: 768.px), styles: [
+        StyleRule.media(query: MediaQuery.screen(minWidth: 768.px), styles: [
           css('.cta-bar').flexbox(
             direction: FlexDirection.row,
           ),
         ]),
-        StyleRule.media(query: MediaRuleQuery(minWidth: 1024.px), styles: [
+        StyleRule.media(query: MediaQuery.screen(minWidth: 1024.px), styles: [
           css('.cta-bar').box(width: 1024.px),
         ]),
       ];

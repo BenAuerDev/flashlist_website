@@ -1,4 +1,4 @@
-import 'package:flashlist_website/styles.dart';
+import 'package:flashlist_website/constants/theme.dart';
 import 'package:jaspr/jaspr.dart';
 
 class Footer extends StatelessComponent {
@@ -60,7 +60,7 @@ class Footer extends StatelessComponent {
             align: TextAlign.center,
           ),
         ]),
-        StyleRule.media(query: MediaRuleQuery(minWidth: 768.px), styles: [
+        StyleRule.media(query: MediaQuery.screen(minWidth: 768.px), styles: [
           css('.footer-wrapper')
               .flexbox(
                 direction: FlexDirection.row,
@@ -74,7 +74,7 @@ class Footer extends StatelessComponent {
             css('a').box(margin: EdgeInsets.only(right: 16.px)),
           ]),
         ]),
-        StyleRule.media(query: MediaRuleQuery(minWidth: 1024.px), styles: [
+        StyleRule.media(query: MediaQuery.screen(minWidth: 1024.px), styles: [
           css('.footer-wrapper').box(
               width: 1024.px, padding: EdgeInsets.symmetric(vertical: 16.px)),
           css('.footer-links')

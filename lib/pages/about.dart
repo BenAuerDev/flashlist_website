@@ -48,7 +48,7 @@ class About extends StatelessComponent {
           margin: EdgeInsets.only(bottom: 16.px),
         ),
 
-        StyleRule.media(query: MediaRuleQuery(minWidth: 768.px), styles: [
+        StyleRule.media(query: MediaQuery.screen(minWidth: 768.px), styles: [
           css('.bottom-cta').box(display: Display.none),
           css('.app-screens-gallery').flexbox(
             justifyContent: JustifyContent.spaceBetween,

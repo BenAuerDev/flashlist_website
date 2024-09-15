@@ -23,15 +23,14 @@ class Home extends StatelessComponent {
         ]),
         FeatureGallery(),
         p(
-          [
-            text(
-              'By using FlashList, you can stay organized, focused, and in control. Try it out and see how it can simplify your task world!',
+            styles: Styles.box(
+              margin: EdgeInsets.only(top: 44.px),
             ),
-          ],
-          styles: Styles.box(
-            margin: EdgeInsets.only(top: 44.px),
-          ),
-        ),
+            [
+              text(
+                'By using FlashList, you can stay organized, focused, and in control. Try it out and see how it can simplify your task world!',
+              ),
+            ]),
       ]),
     ]);
   }

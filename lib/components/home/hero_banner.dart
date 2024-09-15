@@ -31,12 +31,12 @@ class HeroBanner extends StatelessComponent {
           maxHeight: 600.px,
           display: Display.block,
         ),
-        StyleRule.media(query: MediaRuleQuery(minWidth: 768.px), styles: [
+        StyleRule.media(query: MediaQuery.screen(minWidth: 768.px), styles: [
           css('.header-image').box(
             width: 450.px,
           ),
         ]),
-        StyleRule.media(query: MediaRuleQuery(minWidth: 1024.px), styles: [
+        StyleRule.media(query: MediaQuery.screen(minWidth: 1024.px), styles: [
           // css('header', []),
         ]),
       ];

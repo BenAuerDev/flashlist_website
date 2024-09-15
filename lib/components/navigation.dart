@@ -1,4 +1,4 @@
-import 'package:flashlist_website/styles.dart';
+import 'package:flashlist_website/constants/theme.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
@@ -16,17 +16,16 @@ class Navigation extends StatelessComponent {
 
     yield div(classes: 'nav-wrapper', [
       input(
-        [],
-        type: InputType.checkbox,
-        classes: 'burger-menu-button',
-        id: 'burger-menu-button-checkbox',
-      ),
+          type: InputType.checkbox,
+          classes: 'burger-menu-button',
+          id: 'burger-menu-button-checkbox',
+          []),
       // Mobile
       nav(id: 'burger-menu-items', [
         for (var route in navPaths)
-          div(classes: activePath == route.path ? 'active' : null, [
-            Link(to: route.path, [text(route.label)])
-          ]),
+          div(
+              classes: activePath == route.path ? 'active' : null,
+              [Link(to: route.path, child: text(route.label))]),
       ]),
       label(
         htmlFor: 'burger-menu-button-checkbox',
@@ -39,13 +38,14 @@ class Navigation extends StatelessComponent {
       nav(classes: 'desktop-nav', [
         for (var route in navPaths)
           div(classes: activePath == route.path ? 'active' : null, [
-            Link(to: route.path, [text(route.label)])
+            Link(to: route.path, child: text(route.label)),
           ]),
       ]),
     ]);
   }
 
-  static get styles => [
+  @css
+  static List<StyleRule> get styles => [
         // Mobile (first)
         css('.nav-wrapper', [
           css('&').flexbox(
@@ -106,7 +106,7 @@ class Navigation extends StatelessComponent {
               display: Display.none,
             ),
         // Tablet
-        StyleRule.media(query: MediaRuleQuery(minWidth: 768.px), styles: [
+        StyleRule.media(query: MediaQuery.screen(minWidth: 768.px), styles: [
           css('.burger-menu-icon').box(display: Display.none),
           css('.desktop-nav', [
             css('&').box(display: Display.flex).flexbox(
@@ -141,7 +141,8 @@ class Navigation extends StatelessComponent {
           ]),
         ]),
         // Desktop
-        StyleRule.media(query: MediaRuleQuery(minWidth: 1024.px), styles: []),
+        StyleRule.media(
+            query: MediaQuery.screen(minWidth: 1024.px), styles: []),
         // ...App.styles,
       ];
 }

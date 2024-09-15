@@ -56,7 +56,7 @@ class App extends StatelessComponent {
     ]);
   }
 
-  static get styles => [
+  static List<StyleRule> get styles => [
         css('.main', [
           css('&').box(height: 100.vh),
           css('section').flexItem(flex: Flex(grow: 1)).flexbox(

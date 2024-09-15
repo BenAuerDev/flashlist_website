@@ -1,4 +1,4 @@
-import 'package:flashlist_website/styles.dart';
+import 'package:flashlist_website/constants/theme.dart';
 import 'package:jaspr/jaspr.dart';
 
 @client
@@ -73,7 +73,7 @@ class FeatureGallery extends StatelessComponent {
                 margin: EdgeInsets.only(top: 4.px, bottom: 4.px),
               ),
         ]),
-        StyleRule.media(query: MediaRuleQuery(minWidth: 768.px), styles: [
+        StyleRule.media(query: MediaQuery.screen(minWidth: 768.px), styles: [
           css('.feature-gallery').grid(
             template: GridTemplate(
               columns: GridTracks([
@@ -84,6 +84,7 @@ class FeatureGallery extends StatelessComponent {
             ),
           ),
         ]),
-        StyleRule.media(query: MediaRuleQuery(minWidth: 1024.px), styles: []),
+        StyleRule.media(
+            query: MediaQuery.screen(minWidth: 1024.px), styles: []),
       ];
 }
