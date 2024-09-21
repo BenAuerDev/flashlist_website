@@ -4,9 +4,15 @@ FROM ghcr.io/cirruslabs/flutter:latest as build
 # Activate the jaspr cli.
 RUN dart pub global activate jaspr_cli
 
+# Switch to a non-root user
+USER flutter
+
 WORKDIR /app
 # Copy all files into the current image.
 COPY . .
+
+# Ensure pubspec.yaml is in /app
+RUN ls -l /app  
 
 # Resolve app dependencies.
 RUN rm -f pubspec_overrides.yaml
