@@ -1,5 +1,5 @@
 # We need a docker image that has flutter installed.
-FROM cirruslabs/flutter:stable as build
+FROM ghcr.io/cirruslabs/flutter:latest as build
 
 # Activate the jaspr cli.
 RUN dart pub global activate jaspr_cli
